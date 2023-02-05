@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --very-dark-cyan: hsl(158, 36%, 17%);
+    --cream: hsl(30, 38%, 92%);
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-size: 14px;
+    background-color: var(--cream);
+    color: var(--dark-grayish-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 1rem);
+    padding: 0 1rem;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .product {
+        grid-template-columns: 1fr;
+    }
+    .product .product_content {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+.product_image > img{
+    display: block;
+    max-width: 100%;
+}
+
+.product_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.product_title {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--very-dark-blue);
+}
+
+.product_category {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: 0.32rem;
+}
+.product_price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.price {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--dark-cyan);
+}
+.price_original {
+    text-decoration: line-through;
+}
+
+.product_button {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    background-color: var(--dark-cyan);
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.product_button::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(/images/icon-cart.svg);
+
+}
+.product_button:hover, .product_button:active {
+    background-color: var(--very-dark-cyan);
+}
