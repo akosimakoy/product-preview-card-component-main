@@ -64,8 +64,11 @@ main {
     font-family: 'Fraunces', serif;
     font-size: 2rem;
     color: var(--very-dark-blue);
+    line-height: 1;
 }
-
+.product_desc {
+    line-height: 1.6;
+}
 .product_category {
     text-transform: uppercase;
     font-size: .75rem;
